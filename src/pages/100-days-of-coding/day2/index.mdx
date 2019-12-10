@@ -1,0 +1,57 @@
+# Day 2 (Using mdx to write blog)
+
+mdx is simply md where component can be rendered like following:
+
+```javascript
+import { Chart } from '../components/chart'
+
+# Here’s a chart
+
+The chart is rendered inside our MDX document.
+
+<Chart />
+```
+
+`yarn add gatsby-plugin-filesystem`
+`yarn add gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react`
+
+add normal layout at `component/layout.js`
+
+```javascript
+import React from "react"
+import Header from "./header"
+
+function Layout(children) {
+  return (
+    <React.Fragment>
+      <Header />
+      <main>{children}</main>
+    </React.Fragment>
+  )
+}
+
+export default Layout
+```
+
+
+add following to the gatsby config:
+```
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+    },
+    `gatsby-plugin-mdx`,
+```
+
+and simply add `mdx` file to pages folder.
+
+layout rerenders.
+(https://www.gatsbyjs.org/docs/layout-components/#how-to-prevent-layout-components-from-unmounting)[how to prevent layout formponents from unmounting]
+
+## what is rhythm?
+css unit that is equal to line height of top
+(https://betterwebtype.com/articles/2018/10/15/rhythm-in-web-typography/)[Read reference for rhythm]
+
