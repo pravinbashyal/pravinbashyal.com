@@ -1,4 +1,3 @@
-import React from "react"
 import Typography from "typography"
 import oceanBeachTheme from "typography-theme-ocean-beach"
 
@@ -12,6 +11,25 @@ const typography = new Typography({
       marginRight: "auto",
       padding: "1.5rem 1.125rem",
       paddingTop: "1.5rem",
+    },
+    nav: {
+      display: "flex",
+      justifyContent: "space-between",
+      borderBottom: "1px solid #ddd",
+      marginBottom: "1rem",
+    },
+    "nav > ul": {
+      margin: "0.5rem",
+    },
+    "nav > ul > li": {
+      listStyleType: "none",
+      margin: "0.5rem",
+    },
+    "nav > ul > li:first-child": {
+      marginLeft: 0,
+    },
+    "nav > ul > li > a": {
+      textDecoration: "none",
     },
   }),
 })
