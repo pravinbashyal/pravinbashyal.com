@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "cd src && find . -name '*.md' | xargs -I % sh -c 'cat % | mkdir -p ../public/$(../bin/parseName.js --path %) && marked -o ../public/$(../bin/parseName.js %).html'"
+    "build": "cd src && find . -name '*.md' | xargs -I % sh -c 'cat % | mkdir -p ../public/$(../bin/parseName.js --path %) && echo ../public/$(../bin/parseName.js %).html created && marked -o ../public/$(../bin/parseName.js %).html' && cd ../public && find . -name '*.html'"
   },
   "dependencies": {},
   "devDependencies": {
