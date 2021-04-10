@@ -1,1 +1,0 @@
-# Blog written in gatsby
