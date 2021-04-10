@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const args = process.argv.slice(2)
+
+const skipInitialDotPaths = path => {
+  const splittedPath = path.split("/")
+  if (splittedPath[0][0] === ".") {
+    return splittedPath.slice(1).join("/")
+  }
+}
+
+const removeTrailingMd = path => {
+  const splittedPath = path.split(".")
+  if (splittedPath[splittedPath.length - 1] === "md") {
+    return splittedPath.slice(0, -1).join(".")
+  }
+}
+
+if (args[0] === "--path") {
+  console.log(
+    skipInitialDotPaths(args[1])
+      .split("/")
+      .slice(0, -1)
+      .join("/")
+  )
+}
+
+if (args[0] !== "--path") {
+  console.log(skipInitialDotPaths(removeTrailingMd(args[0])))
+}
