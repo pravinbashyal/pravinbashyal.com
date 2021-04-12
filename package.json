@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "listfiles": "./bin/files.js",
     "build": "cd src && find . -name '*.md' | xargs -I % sh -c 'mkdir -p ../public/$(../bin/parseName.js --path %) && echo ../public/$(../bin/parseName.js %).html created && ../bin/createHtmlPage.js % ../public/$(../bin/parseName.js %).html' &&  cd .. && echo 'home directory list' && ls && find . -name '*.html' "
   },
   "dependencies": {},
