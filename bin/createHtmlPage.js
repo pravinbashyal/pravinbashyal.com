@@ -6,7 +6,7 @@ const { getTitle, setTitle } = require("./title")
 const parseName = require("./parseName")
 
 const [inputFilePath, outputPath] = process.argv.slice(2)
-const outputFilePath = `${outputPath}/${parseName(inputFilePath)}`
+const outputFilePath = `${outputPath}/${parseName(inputFilePath)}.html`
 console.log({ inputFilePath, outputFilePath })
 
 const marked = require("marked")
