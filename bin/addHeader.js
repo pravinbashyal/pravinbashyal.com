@@ -14,4 +14,5 @@ const createHtmlFrame = content =>
 
 module.exports = htmlString => {
   const container = parseHTML(createHtmlFrame(htmlString))
+  return container.document.documentElement.outerHTML
 }
