@@ -16,5 +16,5 @@ const createHtmlPage = mdString => {
 readFile(inputFilePath, "utf-8", (_, mdString) => {
   const htmlPage = createHtmlPage(mdString)
   console.log({ outputFilePath, htmlPage })
-  writeFile(outputFilePath, htmlPage, console.log)
+  writeFile(outputFilePath, htmlPage, () => {})
 })
