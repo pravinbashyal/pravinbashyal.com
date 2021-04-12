@@ -3,8 +3,10 @@
 const { documentFromHtmlString } = require("./htmlOperations")
 const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
+const parseName = require("./parseName")
 
-const [inputFilePath, outputFilePath] = process.argv.slice(2)
+const [inputFilePath, outputPath] = process.argv.slice(2)
+const outputFilePath = `${outputPath}/${parseName(inputFilePath)}`
 console.log({ inputFilePath, outputFilePath })
 
 const marked = require("marked")
@@ -23,4 +25,5 @@ const createHtmlPage = mdString => {
 readFile(inputFilePath, "utf-8", (_, mdString) => {
   const htmlPage = createHtmlPage(mdString)
   writeFile(outputFilePath, htmlPage, () => {})
+  console.log("created: ", outputFilePath)
 })

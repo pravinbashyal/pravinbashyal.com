@@ -12,7 +12,13 @@ const [GIT_MODIFIED_SYMBOL, GIT_DELETED_SYMBOL, GIT_ADDED_SYMBOL] = [
 const removeChangeIndicators = changeString => changeString.slice(2)
 const isMarkDown = filename => filename.endsWith(".md")
 
-exec("git show --name-status", (error, stdout) => {
+let files = {
+  modifiedFiles: [],
+  newFiles: [],
+  deletedFiles: [],
+}
+
+const listFiles = exec("git show --name-status", (error, stdout) => {
   const changes = stdout
     .split(os.EOL)
     .filter(Boolean)
@@ -29,6 +35,22 @@ exec("git show --name-status", (error, stdout) => {
     .filter(change => change.startsWith(GIT_DELETED_SYMBOL))
     .filter(isMarkDown)
     .map(removeChangeIndicators)
+  files = {
+    modifiedFiles,
+    newFiles,
+    deletedFiles,
+  }
 
-  process.stdout.write([...modifiedFiles, ...newFiles].join(os.EOL))
+  console.log(modifiedFiles.concat(newFiles).join("\n"))
 })
+
+// listFiles.on("close", _ => {
+//   console.log("exited", { files })
+//   const { modifiedFiles, newFiles } = files
+//   modifiedFiles.concat(newFiles).map(inputFilePath => {
+//     readFile(inputFilePath, "utf-8", (_, mdString) => {
+//       const htmlPage = createHtmlPage(mdString)
+//       writeFile(outputFilePath, htmlPage, () => {})
+//     })
+//   })
+// })

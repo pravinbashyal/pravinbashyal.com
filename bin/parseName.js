@@ -40,3 +40,5 @@ if (args[0] === "--path") {
 if (args[0] !== "--path") {
   console.log(skipInitialSrc(skipInitialDotPaths(removeTrailingMd(args[0]))))
 }
+
+module.exports = path => skipInitialSrc(skipInitialDotPaths(path))
