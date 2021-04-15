@@ -12,3 +12,9 @@ Static site generators like Gatsbyjs, Nextjs or remix_run serves my need but I a
 ### Libraries:
 - [marked]()
 - [linkedom]()
+
+
+```
+import { world } from 'test'
+const hello = world()
+```
