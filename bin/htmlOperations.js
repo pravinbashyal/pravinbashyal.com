@@ -10,6 +10,26 @@ const createHtmlFrame = ({ content, title }) =>
     <title>
       ${title}
     </title>
+    <style>
+      header {
+        height: 8rem;
+        display: flex;
+        aligh-items: center;
+        justify-content: space-between;
+      }
+
+      header nav>ul {
+        list-style: none;
+      }
+
+      header li {
+        margin: 2rem;
+      }
+
+      header li>a {
+        text-decoration: none
+      }
+    </style>
   </head>
   <body>
   <header>
