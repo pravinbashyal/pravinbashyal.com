@@ -6,8 +6,9 @@ const createHtmlFrame = ({ content, title }) =>
   <html lang="en-US">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Author: Pravin Bashyal(pravin.bashyal@gmail.com), ${title}">
     <title>
-    ${title}
+      ${title}
     </title>
   </head>
   <body>
