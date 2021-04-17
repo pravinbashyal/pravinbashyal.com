@@ -11,7 +11,29 @@ const createHtmlFrame = ({ content, title }) =>
     </title>
   </head>
   <body>
-   ${content}
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">
+            About Me
+          </a>
+        </li>
+        <li>
+          <a href="/blogs">
+            Blogs
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      ${content}
+    </article>
+  </main>
+   <footer>
+   </footer>
   </body>
   </html>
   `
