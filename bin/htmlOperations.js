@@ -19,10 +19,6 @@ const createHtmlFrame = ({ content, title }) =>
         margin: 0 8rem;
       }
 
-      header * {
-        margin-right: 2rem;
-      }
-
       header *:last-child {
         margin-right: 0;
       }
@@ -38,6 +34,10 @@ const createHtmlFrame = ({ content, title }) =>
         margin-right: 2rem;
       }
 
+      header nav>a:last-child {
+        margin-right: none;
+      }
+
       header section>a {
         text-decoration: none;
         margin: 0.5rem;
@@ -47,7 +47,6 @@ const createHtmlFrame = ({ content, title }) =>
         flex: 2;
         display: flex;
         justify-content: flex-end;
-        margin-left: 2rem;
       }
 
       main {
