@@ -5,6 +5,7 @@ const createHtmlFrame = ({ content, title }) =>
   <!DOCTYPE html>
   <html lang="en-US">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
     ${title}
     </title>
