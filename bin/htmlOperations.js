@@ -2,6 +2,7 @@ const { parseHTML } = require("linkedom")
 
 const createHtmlFrame = ({ content, title }) =>
   `
+  <!DOCTYPE html>
   <html lang="en-US">
   <head>
     <title>
