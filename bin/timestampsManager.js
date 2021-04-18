@@ -10,8 +10,9 @@ const createDateNodeInDocument = document => (dateString, label) => {
 }
 
 const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
-  console.log({ createdAt, modifiedAt })
   const title = document.querySelector("h1")
+  console.log({ title })
+  if (!title) return
   const createDateNode = createDateNodeInDocument(document)
   const createdAtElement = createDateNode(createdAt, "- Created At: ")
   const modifiedAtElement = createDateNode(modifiedAt, "- Modified At: ")
