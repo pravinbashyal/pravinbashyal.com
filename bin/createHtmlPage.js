@@ -4,6 +4,7 @@ const { documentFromHtmlString } = require("./htmlOperations")
 const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
 const { createTimestampsManager } = require("./timestampsManager")
+const { getTimestamps } = require("./files")
 const parseName = require("./parseName")
 
 const [inputFilePath, outputPath] = process.argv.slice(2)
@@ -14,14 +15,6 @@ const marked = require("marked")
 marked.use({ renderer: createRenderer(setTitle) })
 const { readFile, writeFile, statSync } = require("fs")
 
-const { mtime: modifiedAt, birthtime: createdAt, ...rest } = statSync(
-  inputFilePath
-)
-
-console.log({ rest })
-
-const addTimestamps = createTimestampsManager({ modifiedAt, createdAt })
-
 const createHtmlDocument = mdString => {
   const htmlFromMd = marked(mdString)
   const document = documentFromHtmlString({
@@ -31,9 +24,12 @@ const createHtmlDocument = mdString => {
   return document
 }
 
-readFile(inputFilePath, "utf-8", (_, mdString) => {
-  const pageDocument = createHtmlDocument(mdString)
-  addTimestamps(pageDocument)
-  writeFile(outputFilePath, pageDocument.documentElement.outerHTML, () => {})
-  console.log("created: ", outputFilePath)
+getTimestamps(inputFilePath, ({ createdAt, modifiedAt }) => {
+  readFile(inputFilePath, "utf-8", (_, mdString) => {
+    const pageDocument = createHtmlDocument(mdString)
+    const addTimestamps = createTimestampsManager({ createdAt, modifiedAt })
+    addTimestamps(pageDocument)
+    writeFile(outputFilePath, pageDocument.documentElement.outerHTML, () => {})
+    console.log("created: ", outputFilePath)
+  })
 })

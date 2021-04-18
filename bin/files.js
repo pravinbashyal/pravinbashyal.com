@@ -18,6 +18,8 @@ let files = {
   deletedFiles: [],
 }
 
+const changes = {}
+
 const listFiles = exec("git show --name-status", (error, stdout) => {
   const changes = stdout
     .split(os.EOL)
@@ -40,9 +42,46 @@ const listFiles = exec("git show --name-status", (error, stdout) => {
     newFiles,
     deletedFiles,
   }
-
-  console.log(modifiedFiles.concat(newFiles).join("\n"))
 })
+
+const notEmptyString = string => string !== ""
+
+const commandCallback = timestampType => (error, stdout) => {
+  const outputLines = stdout.split(os.EOL)
+  const date = outputLines[2]
+  console.log({ outputLines })
+  const dateSplit = date.split(" ")
+  const index = dateSplit.slice(1).findIndex(notEmptyString)
+  changes[timestampType] = dateSplit
+    .slice(index)
+    .filter(notEmptyString)
+    .join(" ")
+}
+
+const getTimestamps = (filename, cb) => {
+  const runCommand = ({ command, timestampType }) => {
+    console.log("command ran", command)
+    return exec(command, commandCallback(timestampType))
+  }
+
+  const createdCommand = runCommand({
+    command: `git log --diff-filter=A -- ${filename}`,
+    timestampType: "createdAt",
+  })
+  createdCommand.on("close", _ => {
+    const modifiedCommand = runCommand({
+      command: `git log --diff-filter=M -- ${filename}`,
+      timestampType: "modifiedAt",
+    })
+
+    modifiedCommand.on("close", _ => {
+      cb(changes)
+      console.log({ changes })
+    })
+  })
+}
+
+module.exports = { getTimestamps }
 
 // listFiles.on("close", _ => {
 //   console.log("exited", { files })
