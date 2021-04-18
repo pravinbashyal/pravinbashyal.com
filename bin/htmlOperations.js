@@ -16,7 +16,7 @@ const createHtmlFrame = ({ content, title }) =>
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        margin: 0 8rem;
+        margin: 0 1rem;
       }
 
       header *:last-child {
@@ -24,7 +24,7 @@ const createHtmlFrame = ({ content, title }) =>
       }
 
       nav {
-        padding: 1rem;
+        padding: 1rem 0;
         display: flex;
         flex: 8;
       }
@@ -50,24 +50,33 @@ const createHtmlFrame = ({ content, title }) =>
       }
 
       main {
-        max-width: 1080px;
-        margin: 0 auto !important;
         float: none !important;
+        margin: 0 1rem;
       }
 
       main li {
         margin-top: 0.5rem;
       }
+
+      body {
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      .home {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: black;
+      }
     </style>
   </head>
   <body>
   <header>
-    <strong>
-      Pravin Bashyal
-    </strong>
     <nav>
-      <a href="/">
-        About Me
+      <a href="/" class="home">
+        <strong>
+          Pravin Bashyal
+        </strong>
       </a>
       <a href="/blogs">
         Blogs
