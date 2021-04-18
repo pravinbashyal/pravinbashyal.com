@@ -11,19 +11,24 @@ console.log({ inputFilePath, outputFilePath })
 
 const marked = require("marked")
 marked.use({ renderer: createRenderer(setTitle) })
-const { readFile, writeFile } = require("fs")
+const { readFile, writeFile, statSync } = require("fs")
 
-const createHtmlPage = mdString => {
+const { mtime: modifiedAt, birthTime: createdAt } = statSync(inputFilePath)
+
+const addTimestamps = createTimestampsManager({ modifiedAt, createdAt })
+
+const createHtmlDocument = mdString => {
   const htmlFromMd = marked(mdString)
   const document = documentFromHtmlString({
     content: htmlFromMd,
     title: getTitle(),
   })
-  return document.documentElement.outerHTML
+  return document
 }
 
 readFile(inputFilePath, "utf-8", (_, mdString) => {
-  const htmlPage = createHtmlPage(mdString)
-  writeFile(outputFilePath, htmlPage, () => {})
+  const pageDocument = createHtmlDocument(mdString)
+  addTimestamps(document)
+  writeFile(outputFilePath, pageDocument.documentElement.outerHTML, () => {})
   console.log("created: ", outputFilePath)
 })

@@ -1,6 +1,6 @@
 const { parseHTML } = require("linkedom")
 
-const createHtmlFrame = ({ content, title }) =>
+const createHtmlFrame = ({ content, title, fileMeta }) =>
   `
   <!DOCTYPE html>
   <html lang="en-US">
@@ -116,8 +116,8 @@ const createHtmlFrame = ({ content, title }) =>
   </html>
   `
 
-const documentFromHtmlString = ({ content, title }) => {
-  const { document } = parseHTML(createHtmlFrame({ content, title }))
+const documentFromHtmlString = ({ content, title, fileMeta }) => {
+  const { document } = parseHTML(createHtmlFrame({ content, title, fileMeta }))
   return document
 }
 
