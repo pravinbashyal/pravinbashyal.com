@@ -15,9 +15,11 @@ const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
   if (!title) return
   const createDateNode = createDateNodeInDocument(document)
   const createdAtElement = createDateNode(createdAt, "- Created At: ")
-  const modifiedAtElement = createDateNode(modifiedAt, "- Modified At: ")
+  if (modifiedAt) {
+    const modifiedAtElement = createDateNode(modifiedAt, "- Modified At: ")
+    title.insertAdjacentElement("afterend", modifiedAtElement)
+  }
   title.insertAdjacentElement("afterend", createdAtElement)
-  title.insertAdjacentElement("afterend", modifiedAtElement)
   return document
 }
 

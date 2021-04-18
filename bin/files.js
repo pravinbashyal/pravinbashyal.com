@@ -48,6 +48,7 @@ const notEmptyString = string => string !== ""
 
 const commandCallback = timestampType => (error, stdout) => {
   const outputLines = stdout.split(os.EOL)
+  if (outputLines.filter(notEmptyString).length === 0) return
   const date = outputLines[2]
   console.log({ outputLines })
   const dateSplit = date.split(" ")
