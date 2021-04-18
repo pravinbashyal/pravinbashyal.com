@@ -10,6 +10,9 @@ const createHtmlFrame = ({ content, title }) =>
     <title>
       ${title}
     </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <style>
       header {
         height: 6rem;
@@ -61,6 +64,17 @@ const createHtmlFrame = ({ content, title }) =>
       body {
         max-width: 850px;
         margin: 0 auto;
+      }
+
+      body * {
+        font-family: 'Roboto', sans-serif;
+        font-weight: light;
+        color: rgb(32, 33, 36);
+      }
+
+      body h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: regular;
       }
 
       .home {
