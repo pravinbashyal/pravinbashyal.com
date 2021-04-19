@@ -5,7 +5,6 @@ const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
 const { createTimestampsManager } = require("./timestampsManager")
 const { getTimestamps, isBlogPath } = require("./files")
-const { parseJSON } = require("linkedom")
 const parseName = require("./parseName")
 
 const [inputFilePath, outputPath] = process.argv.slice(2)
@@ -14,7 +13,7 @@ console.log({ inputFilePath, outputFilePath })
 
 const marked = require("marked")
 marked.use({ renderer: createRenderer(setTitle) })
-const { readFile, writeFile, statSync } = require("fs")
+const { readFile, writeFile } = require("fs")
 
 const createHtmlDocument = mdString => {
   const htmlFromMd = marked(mdString)
