@@ -19,7 +19,6 @@ const formatDate = dateString => {
 
 const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
   const title = document.querySelector("h1")
-  console.log({ title })
 
   const timestampContainer = document.createElement("p")
   timestampContainer.classList.add("timestamp")

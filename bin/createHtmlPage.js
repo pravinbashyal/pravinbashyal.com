@@ -4,7 +4,7 @@ const { documentFromHtmlString, withDoctype } = require("./htmlOperations")
 const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
 const { createTimestampsManager } = require("./timestampsManager")
-const { getTimestamps } = require("./files")
+const { getTimestamps, isBlogPath } = require("./files")
 const { parseJSON } = require("linkedom")
 const parseName = require("./parseName")
 
@@ -25,11 +25,13 @@ const createHtmlDocument = mdString => {
   return document
 }
 
-getTimestamps(inputFilePath, ({ createdAt, modifiedAt }) => {
+const fileCallBack = ({ createdAt, modifiedAt } = {}) => {
   readFile(inputFilePath, "utf-8", (_, mdString) => {
     const pageDocument = createHtmlDocument(mdString)
-    const addTimestamps = createTimestampsManager({ createdAt, modifiedAt })
-    addTimestamps(pageDocument)
+    if (createdAt && modifiedAt) {
+      const addTimestamps = createTimestampsManager({ createdAt, modifiedAt })
+      addTimestamps(pageDocument)
+    }
     writeFile(
       outputFilePath,
       withDoctype(pageDocument.documentElement.outerHTML, "html"),
@@ -37,4 +39,10 @@ getTimestamps(inputFilePath, ({ createdAt, modifiedAt }) => {
     )
     console.log("created: ", outputFilePath)
   })
-})
+}
+
+if (isBlogPath(inputFilePath)) {
+  getTimestamps(inputFilePath, fileCallBack)
+} else {
+  fileCallBack()
+}

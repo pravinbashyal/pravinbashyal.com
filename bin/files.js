@@ -82,7 +82,12 @@ const getTimestamps = (filename, cb) => {
   })
 }
 
-module.exports = { getTimestamps }
+const blogRegex = new RegExp(".*blogs/[a-zA-Z]+.md$")
+const isBlogPath = path => {
+  return blogRegex.test(path)
+}
+
+module.exports = { getTimestamps, isBlogPath }
 
 // listFiles.on("close", _ => {
 //   console.log("exited", { files })
