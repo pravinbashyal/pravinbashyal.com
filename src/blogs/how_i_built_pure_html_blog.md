@@ -12,6 +12,7 @@ Static site generators like Gatsbyjs, Nextjs or remix_run serves my need but I a
 ## Libraries:
 - [marked](https://github.com/markedjs/marked)
 - [linkedom](https://github.com/WebReflection/linkedom)
+- [highlight.js](https://highlightjs.org/)
 
 
 ```typescript
