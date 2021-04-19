@@ -1,3 +1,5 @@
+const hljs = require("highlight.js")
+
 module.exports = setTitle => ({
   heading(text, level) {
     if (level === 1) {
@@ -8,5 +10,13 @@ module.exports = setTitle => ({
             <h${level}>
               ${text}
             </h${level}>`
+  },
+  code(code, infostring, escaped) {
+    console.log({ code, infostring, escaped })
+    const codeHtml = `<pre><code class="language-${infostring} hljs">${
+      hljs.highlight(code, { language: "typescript" }).value
+    }</code></pre>`
+    console.log(codeHtml)
+    return codeHtml
   },
 })
