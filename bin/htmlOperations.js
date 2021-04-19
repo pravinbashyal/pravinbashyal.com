@@ -12,6 +12,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/paraiso-light.min.css">
     <style>
       header {
         height: 6rem;
@@ -63,7 +64,25 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       body {
         max-width: 850px;
         margin: 0 auto;
+        font-size: 16px;
       }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      h2 {
+        font-size: 1.875rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h4, h5, h6 {
+        font-size: 1.3125rem;
+      }
+
 
       body * {
         font-family: 'Roboto', sans-serif;
@@ -85,11 +104,12 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .timestamp * {
         color: inherit;
         font-size: inherit;
+        padding-left: 0.25rem;
       }
 
       .timestamp {
         font-size: 0.8rem;
-        margin: -0.75rem 0 1.5rem 0;
+        margin: -1.2rem 0 1.5rem 0;
         color: rgba(50,50,50,0.8);
       }
 
@@ -107,7 +127,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         align-items: center;
         justify-content: center;
         font-size: 2rem;
-        width: 100%;
+        padding: 1rem 0.5rem;
       }
 
       blockquote p {
