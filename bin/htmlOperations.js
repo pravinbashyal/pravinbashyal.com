@@ -119,10 +119,10 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       </a>
     </nav>
     <section class="social" aria-label="social">
-      <a href="https://twitter.com">
+      <a href="https://twitter.com/pravinbashyal">
         Twitter
       </a>
-      <a href="https://twitter.com">
+      <a href="https://github.com/pravinbashyal">
         Github
       </a>
     </section>
