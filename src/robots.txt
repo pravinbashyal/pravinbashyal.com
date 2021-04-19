@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://pravinbashyal.com/sitemap.xml
+Host: https://pravinbashyal.com
