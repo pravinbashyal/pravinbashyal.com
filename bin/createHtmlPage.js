@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-const { documentFromHtmlString } = require("./htmlOperations")
+const { documentFromHtmlString, withDoctype } = require("./htmlOperations")
 const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
 const { createTimestampsManager } = require("./timestampsManager")
 const { getTimestamps } = require("./files")
+const { parseJSON } = require("linkedom")
 const parseName = require("./parseName")
 
 const [inputFilePath, outputPath] = process.argv.slice(2)
@@ -29,7 +30,11 @@ getTimestamps(inputFilePath, ({ createdAt, modifiedAt }) => {
     const pageDocument = createHtmlDocument(mdString)
     const addTimestamps = createTimestampsManager({ createdAt, modifiedAt })
     addTimestamps(pageDocument)
-    writeFile(outputFilePath, pageDocument.documentElement.outerHTML, () => {})
+    writeFile(
+      outputFilePath,
+      withDoctype(pageDocument.documentElement.outerHTML, "html"),
+      () => {}
+    )
     console.log("created: ", outputFilePath)
   })
 })

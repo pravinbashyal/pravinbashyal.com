@@ -143,6 +143,9 @@ const documentFromHtmlString = ({ content, title, fileMeta }) => {
   return document
 }
 
+const withDoctype = (html, doctype) => `<!DOCTYPE ${doctype}> ${html}`
+
 module.exports = {
   documentFromHtmlString,
+  withDoctype,
 }
