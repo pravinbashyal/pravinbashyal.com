@@ -82,6 +82,17 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         text-decoration: none;
         color: black;
       }
+
+      .timestamp * {
+        color: inherit;
+        font-size: inherit;
+      }
+
+      .timestamp {
+        font-size: 0.8rem;
+        margin: -0.75rem 0 1.5rem 0;
+        color: rgba(50,50,50,0.8);
+      }
     </style>
   </head>
   <body>
