@@ -1,13 +1,12 @@
 const createDateNodeInDocument = document => (dateString, label) => {
-  const container = document.createElement("p")
-  container.classList.add("timestamp")
-  container.appendChild(document.createTextNode(label))
+  const dateContainer = document.createElement("span")
+  dateContainer.appendChild(document.createTextNode(label))
   const date = document.createElement("date")
   date.appendChild(document.createTextNode(dateString))
   date.setAttribute("dateTime", dateString)
 
-  container.appendChild(date)
-  return container
+  dateContainer.appendChild(date)
+  return dateContainer
 }
 
 const formatDate = dateString => {
@@ -21,20 +20,23 @@ const formatDate = dateString => {
 const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
   const title = document.querySelector("h1")
   console.log({ title })
+
+  const timestampContainer = document.createElement("p")
+  timestampContainer.classList.add("timestamp")
+
   if (!title) return
+
   const timestampNode = createDateNodeInDocument(document)
-  const timestampElement = timestampNode(formatDate(createdAt), "Published: ")
+  const createdAtElement = timestampNode(formatDate(createdAt), "Published: ")
+  timestampContainer.appendChild(createdAtElement)
+
   if (modifiedAt) {
-    const modifiedAtContainer = document.createElement("span")
-    modifiedAtContainer.appendChild(document.createTextNode(" ( Updated: "))
-    const modifiedAtDate = document.createElement("date")
-    modifiedAtDate.appendChild(document.createTextNode(formatDate(modifiedAt)))
-    modifiedAtDate.setAttribute("dateTime", modifiedAt)
-    modifiedAtContainer.appendChild(modifiedAtDate)
-    modifiedAtContainer.appendChild(document.createTextNode(" )"))
-    timestampElement.appendChild(modifiedAtContainer)
+    timestampContainer.appendChild(document.createTextNode("( "))
+    const modifiedAtElement = timestampNode(formatDate(modifiedAt), "Updated: ")
+    timestampContainer.appendChild(modifiedAtElement)
+    timestampContainer.appendChild(document.createTextNode(" )"))
   }
-  title.insertAdjacentElement("afterend", timestampElement)
+  title.insertAdjacentElement("afterend", timestampContainer)
   return document
 }
 
