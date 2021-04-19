@@ -81,7 +81,7 @@ const getTimestamps = (filename, cb) => {
   })
 }
 
-const blogRegex = new RegExp(".*blogs/[a-zA-Z]+.md$")
+const blogRegex = new RegExp(".*blogs/[a-zA-Z_.-]+.md$")
 const isBlogPath = path => {
   return blogRegex.test(path)
 }

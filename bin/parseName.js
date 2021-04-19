@@ -28,5 +28,18 @@ const removeTrailingMd = path => {
   return splittedPath.join(".")
 }
 
+if (args[0] === "--path") {
+  console.log(
+    skipInitialSrc(skipInitialDotPaths(args[1]))
+      .split("/")
+      .slice(0, -1)
+      .join("/")
+  )
+}
+
+if (args[0] !== "--path") {
+  console.log(skipInitialSrc(skipInitialDotPaths(removeTrailingMd(args[0]))))
+}
+
 module.exports = path =>
   skipInitialSrc(skipInitialDotPaths(removeTrailingMd(path)))
