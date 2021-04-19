@@ -12,11 +12,9 @@ module.exports = setTitle => ({
             </h${level}>`
   },
   code(code, infostring, escaped) {
-    console.log({ code, infostring, escaped })
     const codeHtml = `<pre><code class="language-${infostring} hljs">${
       hljs.highlight(code, { language: "typescript" }).value
     }</code></pre>`
-    console.log(codeHtml)
     return codeHtml
   },
 })

@@ -77,7 +77,6 @@ const getTimestamps = (filename, cb) => {
 
     modifiedCommand.on("close", _ => {
       cb(changes)
-      console.log({ changes })
     })
   })
 }
