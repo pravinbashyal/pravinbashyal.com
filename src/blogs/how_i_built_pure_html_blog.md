@@ -1,4 +1,7 @@
-# How I build pure html blog?
+# (WIP) How I build pure html blog?
+
+> You dont need to learn gatsby, nextjs <br/>
+>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...probably
 
 Static site generators like Gatsbyjs, Nextjs or remix_run serves my need but I actually did not want to add too many javascript dependencies and complex configs. My requirements were plain simple. I wanted to write stuffs in md file which gets converted to html files and few more automations.
 
@@ -9,13 +12,12 @@ Static site generators like Gatsbyjs, Nextjs or remix_run serves my need but I a
 - lists latest blogs
 - has created date and last modified date
 
-## Libraries:
+# # Libraries:
 - [marked](https://github.com/markedjs/marked)
 - [linkedom](https://github.com/WebReflection/linkedom)
 - [highlight.js](https://highlightjs.org/)
 
 
 ```typescript
-import { world } from 'test'
-const hello = world()
+marked()
 ```

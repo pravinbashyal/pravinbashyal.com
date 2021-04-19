@@ -11,10 +11,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       ${title}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/paraiso-light.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <style>
       header {
         height: 6rem;
@@ -103,6 +100,32 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       code * {
         font-family: inherit;
         font-size: 1rem;
+      }
+
+      blockquote {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        width: 100%;
+      }
+
+      blockquote p {
+        font-weight: lighter;
+      }
+
+      blockquote>p::before {
+        content: '"';
+        margin-right: 0.5rem;
+        font-size: 2rem;
+        font-family: 'Roboto Mono', monospace;
+      }
+
+      blockquote>p::after {
+        content: '"';
+        margin-left: 0.5rem;
+        font-size: 2rem;
+        font-family: 'Roboto Mono', monospace;
       }
     </style>
   </head>
