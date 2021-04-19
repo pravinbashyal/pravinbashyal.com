@@ -13,6 +13,10 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <style>
       header {
         height: 6rem;
@@ -92,6 +96,15 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         font-size: 0.8rem;
         margin: -0.75rem 0 1.5rem 0;
         color: rgba(50,50,50,0.8);
+      }
+
+      code {
+        font-family: 'Roboto Mono', monospace;
+      }
+
+      code * {
+        font-family: inherit;
+        font-size: 1rem;
       }
     </style>
   </head>

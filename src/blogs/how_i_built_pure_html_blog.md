@@ -14,7 +14,7 @@ Static site generators like Gatsbyjs, Nextjs or remix_run serves my need but I a
 - [linkedom]()
 
 
-```
+```typescript
 import { world } from 'test'
 const hello = world()
 ```
