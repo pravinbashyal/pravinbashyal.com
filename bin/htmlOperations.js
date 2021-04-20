@@ -126,7 +126,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         align-items: center;
         justify-content: center;
         font-size: 2rem;
-        padding: 1rem 0.5rem;
+        margin: 1.5rem 2rem;
       }
 
       blockquote p {
@@ -145,6 +145,12 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         margin-left: 0.5rem;
         font-size: 2rem;
         font-family: 'Roboto Mono', monospace;
+      }
+
+      @media (max-width: 768px) {
+        blockquote {
+          margin: 1.5rem 0.5rem;
+        }
       }
     </style>
   </head>
