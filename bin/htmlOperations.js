@@ -13,6 +13,22 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/paraiso-light.min.css">
     <style>
+      html {
+        font-size: 100%;
+      }
+
+      body {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1rem;
+      }
+
+      body * {
+        font-family: 'Roboto', sans-serif;
+        font-weight: light;
+        color: rgb(32, 33, 36);
+      }
+
       header {
         height: 6rem;
         display: flex;
@@ -29,6 +45,10 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         padding: 1rem 0;
         display: flex;
         flex: 8;
+      }
+
+      p {
+        line-height: 1.5;
       }
 
       header nav>a {
@@ -57,13 +77,11 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       }
 
       main li {
-        margin-top: 0.5rem;
+        margin-bottom: 0.6rem;
       }
 
-      body {
-        max-width: 850px;
-        margin: 0 auto;
-        font-size: 16px;
+      main ul {
+        margin-bottom: 1rem;
       }
 
       h1 {
@@ -82,14 +100,8 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         font-size: 1.3125rem;
       }
 
-
-      body * {
-        font-family: 'Roboto', sans-serif;
-        font-weight: light;
-        color: rgb(32, 33, 36);
-      }
-
-      body h1, h2, h3, h4, h5, h6 {
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: regular;
       }
