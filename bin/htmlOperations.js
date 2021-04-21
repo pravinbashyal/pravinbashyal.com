@@ -127,6 +127,9 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       code {
         font-family: 'Roboto Mono', monospace;
         border-radius: 6px;
+      }
+
+      pre code {
         -webkit-box-shadow: 0px 0px 6px 0px rgba(2,35,19,0.24);
         box-shadow: 0px 0px 6px 0px rgba(2,35,19,0.24);
       }
