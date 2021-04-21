@@ -8,19 +8,19 @@ I had been working on developing some personal website with Gatsby, mid way thro
 Bottom line, I wanted simple html website without too many javascript dependencies and configs. So I scraped what I had in progress with gatsby and started listing out what my requirements were.
 
 ## Features I needed:
-- I only need html and css based blog for now
-- I write md and chugs out html blogs
-- Lists latest blogs
-- It shows created date and last modified date
-- looks pretty decent
-- is responsive and accessible
-- seo optimized
+1. I only need html and css based blog for now
+2. I write md and chugs out html blogs
+3. Lists latest blogs
+4. It shows created date and last modified date
+5. looks pretty decent
+6. is responsive and accessible
+7. seo optimized
 
 ## Libraries and tools used:
 - [marked](https://github.com/markedjs/marked)
 - [linkedom](https://github.com/WebReflection/linkedom)
 - [highlight.js](https://highlightjs.org/)
-- [lighthouse]()
+- [lighthouse](https://developers.google.com/web/tools/lighthouse)
 
 Through different improvements and iterations what I have right now can be found in my [github repo](https://github.com/pravinbashyal/pravinbashyal.com). Please do raise an issue or leave a feedback.
 

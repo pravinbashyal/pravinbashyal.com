@@ -14,11 +14,11 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/night-owl.min.css">
     <style>
       html {
-        font-size: 100%;
+        font-size: 110%;
       }
 
       body {
-        max-width: 850px;
+        max-width: 90ch;
         margin: 0 auto;
         font-size: 1rem;
       }
@@ -29,11 +29,26 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         color: rgb(32, 33, 36);
       }
 
+      article a {
+        text-decoration: none;
+        color: #1a73e8;
+      }
+
       header {
         height: 6rem;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        margin: 0 1rem;
+        font-size: 1rem;
+      }
+
+      footer {
+        height: 6rem;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0 1rem;
       }
 
@@ -60,7 +75,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         margin-right: none;
       }
 
-      header section>a {
+      section.social>a {
         text-decoration: none;
         margin: 0.5rem;
       }
@@ -80,7 +95,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         margin-bottom: 0.6rem;
       }
 
-      main ul {
+      main ul,ol {
         margin-bottom: 1rem;
       }
 
@@ -120,7 +135,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .timestamp {
         font-size: 0.8rem;
         margin: -1.2rem 0 1.5rem 0;
-        color: rgba(50,50,50,0.8);
+        color: rgba(50,50,50,0.9);
         padding-left: 0.25rem;
       }
 
@@ -198,8 +213,8 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       ${content}
     </article>
   </main>
-   <footer>
-   </footer>
+  <footer>
+  </footer>
   </body>
   </html>
   `
