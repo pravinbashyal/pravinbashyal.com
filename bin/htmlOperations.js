@@ -103,13 +103,13 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .timestamp * {
         color: inherit;
         font-size: inherit;
-        padding-left: 0.25rem;
       }
 
       .timestamp {
         font-size: 0.8rem;
         margin: -1.2rem 0 1.5rem 0;
         color: rgba(50,50,50,0.8);
+        padding-left: 0.25rem;
       }
 
       code {

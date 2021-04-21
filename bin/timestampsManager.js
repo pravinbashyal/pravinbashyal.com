@@ -1,9 +1,26 @@
+const generateId = () => {
+  return Math.random()
+    .toString(36)
+    .substr(2, 9)
+}
+// TODO: add dl
 const createDateNodeInDocument = document => (dateString, label) => {
   const dateContainer = document.createElement("span")
-  dateContainer.appendChild(document.createTextNode(label))
+  const labelId = generateId()
+  const valueId = generateId()
+
+  dateContainer.setAttribute("aria-labelledby", labelId)
+  dateContainer.setAttribute("aria-describedby", valueId)
+
+  const labelEl = document.createElement("span")
+  labelEl.appendChild(document.createTextNode(label))
+  labelEl.setAttribute("id", labelId)
+  dateContainer.appendChild(labelEl)
+
   const date = document.createElement("date")
-  date.appendChild(document.createTextNode(dateString))
+  date.setAttribute("id", valueId)
   date.setAttribute("dateTime", dateString)
+  date.appendChild(document.createTextNode(dateString))
 
   dateContainer.appendChild(date)
   return dateContainer
