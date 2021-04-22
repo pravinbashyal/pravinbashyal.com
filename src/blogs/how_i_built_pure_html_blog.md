@@ -27,13 +27,14 @@ Through different improvements and iterations what I have right now can be found
 ## Processes
 Now lets break down how these requirements were met.
 
-### **_1. basic html and css blog_**
+### _1. basic html and css blog_
 
 I started out with basic html builder using javascript string templates and html build from [marked](https://github.com/markedjs/marked). I created a basic function `createHtmlFrame` that adds html wrappers to html generated from markdown file, which we will follow up on next point.
 
 ```typescript
 const createHtmlFrame = ({ content }) =>
   `
+  <html>
   <head></head>
   <body>
     <header></header>
@@ -48,6 +49,37 @@ const createHtmlFrame = ({ content }) =>
   </html>
   `
 ```
+
+So when I write following md:
+
+```markdown
+# hello
+
+world
+```
+
+Following would be output:
+```html
+  <html>
+    <head></head>
+    <body>
+    <header></header>
+    <main>
+      <article>
+        <h1>
+          Hello
+        </h1>
+        <p>
+          world
+        </p>
+      </article>
+    </main>
+    <footer>
+    </footer>
+    </body>
+  </html>
+```
+
 
 ### **_2. **
 

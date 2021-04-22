@@ -15,18 +15,15 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     <style>
       html {
         font-size: 110%;
+        color: rgb(32, 33, 36);
+        font-family: 'Roboto', sans-serif;
+        font-weight: light;
       }
 
       body {
         max-width: 90ch;
         margin: 0 auto;
         font-size: 1rem;
-      }
-
-      body * {
-        font-family: 'Roboto', sans-serif;
-        font-weight: light;
-        color: rgb(32, 33, 36);
       }
 
       article a {
@@ -69,6 +66,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       header nav>a {
         text-decoration: none;
         margin-right: 2rem;
+        color: rgb(32, 33, 36);
       }
 
       header nav>a:last-child {
