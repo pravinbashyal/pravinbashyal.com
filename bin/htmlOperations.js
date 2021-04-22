@@ -75,20 +75,27 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         margin-right: none;
       }
 
-      section.social>a {
+      .social a {
         text-decoration: none;
-        margin: 0.75rem;
+        margin: 0.25rem;
+        box-sizing: border-box;
+      }
+
+      .social a:hover {
+        border-bottom: 4px solid rgba(0,0,0,0);
       }
 
       .social {
         flex: 2;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
       }
 
       .social img {
         height: 1.5rem;
         width: 1.5rem;
+        padding: 0.5rem;
       }
 
       main {
