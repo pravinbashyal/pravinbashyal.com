@@ -77,7 +77,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       .social a {
         text-decoration: none;
-        margin: 0.25rem;
+        margin: 0 0.25rem;
         box-sizing: border-box;
       }
 
@@ -93,9 +93,9 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       }
 
       .social img {
-        height: 1.5rem;
+        height: 1.25rem;
         width: 1.5rem;
-        padding: 0.5rem;
+        padding:0 0.5rem;
       }
 
       main {
@@ -229,14 +229,14 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         <span class="icon-button-label">
           Twitter
         </span>
-        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/twitter.svg" alt="github icon">
+        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/twitter.svg" alt="twitter icon">
         </img>
       </a>
       <a href="https://github.com/pravinbashyal" title="github" rel="me noopener">
         <span class="icon-button-label">
           Github
         </span>
-        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="twitter icon">
+        <img style="margin-bottom: 2px;" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="github icon">
         </img>
       </a>
     </section>

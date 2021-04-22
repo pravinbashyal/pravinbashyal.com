@@ -47,10 +47,17 @@ const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
   timestampContainer.appendChild(createdAtElement)
 
   if (modifiedAt) {
-    timestampContainer.appendChild(document.createTextNode("( "))
+    const bracesOpen = document.createElement("span")
+
+    bracesOpen.appendChild(document.createTextNode("( "))
+    bracesOpen.setAttribute("aria-hidden", "true")
+    timestampContainer.appendChild(bracesOpen)
     const modifiedAtElement = timestampNode(formatDate(modifiedAt), "Updated: ")
     timestampContainer.appendChild(modifiedAtElement)
-    timestampContainer.appendChild(document.createTextNode(" )"))
+    const bracesClose = document.createElement("span")
+    bracesClose.appendChild(document.createTextNode(" )"))
+    bracesClose.setAttribute("aria-hidden", "true")
+    timestampContainer.appendChild(bracesClose)
   }
   title.insertAdjacentElement("afterend", timestampContainer)
   return document
