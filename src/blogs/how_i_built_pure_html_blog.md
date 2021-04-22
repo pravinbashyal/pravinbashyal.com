@@ -7,14 +7,14 @@ I had been working on developing some personal website with Gatsby, mid way thro
 
 Bottom line, I wanted simple html website without too many javascript dependencies and configs. So I scraped what I had in progress with gatsby and started listing out what my requirements were.
 
-## Features I needed:
-1. I only need html and css based blog for now
-2. I write md and chugs out html blogs
-3. Lists latest blogs
-4. It shows created date and last modified date
-5. looks pretty decent
-6. is responsive and accessible
-7. seo optimized
+## My Requirements:
+1. basic html and css blog
+2. I write markdown and chugs out html blogs
+3. It shows created date and last modified date
+4. looks pretty decent
+5. is responsive and accessible
+6. seo optimized
+7. lists latest blogs
 
 ## Libraries and tools used:
 - [marked](https://github.com/markedjs/marked)
@@ -24,47 +24,56 @@ Bottom line, I wanted simple html website without too many javascript dependenci
 
 Through different improvements and iterations what I have right now can be found in my [github repo](https://github.com/pravinbashyal/pravinbashyal.com). Please do raise an issue or leave a feedback.
 
-### Low javascript dependency
-_I only need html and css based blog for now_
+## Processes
+Now lets break down how these requirements were met.
+
+### **_1. basic html and css blog_**
+
+I started out with basic html builder using javascript string templates and html build from [marked](https://github.com/markedjs/marked). I created a basic function `createHtmlFrame` that adds html wrappers to html generated from markdown file, which we will follow up on next point.
+
+```typescript
+const createHtmlFrame = ({ content }) =>
+  `
+  <head></head>
+  <body>
+    <header></header>
+    <main>
+      <article>
+        ${content}
+      </article>
+    </main>
+    <footer>
+    </footer>
+  </body>
+  </html>
+  `
+```
+
+### **_2. **
+
+This resulted in very little javascript dependencies.
 
 My `package.json`:
 
 ```json
 {
-  "name": "pravinbashyal.com",
-  "private": true,
-  "description": "Pravin Bashyal - Personal website",
-  "version": "0.1.0",
-  "license": "MIT",
-  "scripts": {
-    "build": "cd src && find . -name '*.md' | xargs -I % sh -c 'mkdir -p ../public/$(../bin/parseName.js --path %) &&  ../bin/createHtmlPage.js % ../public' && echo home directory list && ls && cd .. && find . -name '*.html' && cp src/robots.txt public/",
-    "build:diff": "./bin/files.js | xargs -I % sh -c 'mkdir -p public/$(./bin/parseName.js --path %) && ./bin/createHtmlPage.js % public' && echo home directory list && ls && find . -name '*.html'"
-  },
-  "dependencies": {},
-  "devDependencies": {
+  .
+  .
+  .
+  "dependencies": {
     "highlight.js": "^10.7.2",
     "linkedom": "^0.7.1",
-    "marked": "^2.0.1",
-    "prettier": "^1.17.0"
+    "marked": "^2.0.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pravinbashyal/pravinbashyal.com"
-  },
-  "bugs": {}
+  .
+  .
+  .
 }
 ```
 
 ### Write markdown; Chug out html
 This section will cover two of my requirements:
 - I write in md and chugs out html blogs
-
-### Lists latest blog
-
-### looks decent enough
-- typography
-- code highlighting
-- quotes
 
 ###
 
@@ -73,3 +82,9 @@ const marked = require("marked")
 marked.use({ renderer: createRenderer(setTitle) })
 marked('### some title') // <h3>some title</h3>
 ```
+### Lists latest blog
+
+### looks decent enough
+- typography
+- code highlighting
+- quotes
