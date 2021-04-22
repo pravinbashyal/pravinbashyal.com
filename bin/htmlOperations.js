@@ -77,13 +77,18 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       section.social>a {
         text-decoration: none;
-        margin: 0.5rem;
+        margin: 0.75rem;
       }
 
       .social {
         flex: 2;
         display: flex;
         justify-content: flex-end;
+      }
+
+      .social img {
+        height: 1.5rem;
+        width: 1.5rem;
       }
 
       main {
@@ -185,6 +190,19 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
           margin: 1.5rem 0.5rem;
         }
       }
+
+      .icon-button-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
     </style>
   </head>
   <body>
@@ -200,11 +218,19 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       </a>
     </nav>
     <section class="social" aria-label="social">
-      <a href="https://twitter.com/pravinbashyal">
-        Twitter
+      <a href="https://twitter.com/pravinbashyal" title="twitter" rel="me noopener">
+        <span class="icon-button-label">
+          Twitter
+        </span>
+        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/twitter.svg" alt="github icon">
+        </img>
       </a>
-      <a href="https://github.com/pravinbashyal">
-        Github
+      <a href="https://github.com/pravinbashyal" title="github" rel="me noopener">
+        <span class="icon-button-label">
+          Github
+        </span>
+        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg" alt="twitter icon">
+        </img>
       </a>
     </section>
   </header>
