@@ -138,6 +138,11 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         padding: 0 0.25rem;
       }
 
+      h2 a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: from-font;
+      }
+
       h2:hover a {
         visibility: visible;
       }
@@ -274,10 +279,8 @@ const addLinkInTextElement = document => element => {
   element.setAttribute("id", id)
   const link = document.createElement("a")
   link.setAttribute("aria-hidden", "true")
-  const linkTextElement = document.createElement("strong")
-  linkTextElement.appendChild(document.createTextNode("#"))
+  link.appendChild(document.createTextNode("#"))
   link.href = `#${id}`
-  link.appendChild(linkTextElement)
   element.appendChild(link)
 }
 

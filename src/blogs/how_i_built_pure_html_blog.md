@@ -7,7 +7,7 @@ I had been working on developing some personal website with Gatsby, mid way thro
 
 Bottom line, I wanted simple html website without too many javascript dependencies and configs. So I scraped what I had in progress with gatsby and started listing out what my requirements were.
 
-## My Requirements:
+## Requirements
 1. basic html and css blog
 2. I write markdown and chugs out html blogs
 3. It shows created date and last modified date
@@ -16,7 +16,7 @@ Bottom line, I wanted simple html website without too many javascript dependenci
 6. seo optimized
 7. lists latest blogs
 
-## Libraries and tools used:
+## Libraries and tools
 - [marked](https://github.com/markedjs/marked)
 - [linkedom](https://github.com/WebReflection/linkedom)
 - [highlight.js](https://highlightjs.org/)
