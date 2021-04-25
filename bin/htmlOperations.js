@@ -1,4 +1,5 @@
 const { parseHTML } = require("linkedom")
+const kebabCase = require("lodash.kebabcase")
 
 const createHtmlFrame = ({ content, title, fileMeta }) =>
   `
@@ -131,6 +132,16 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         font-weight: regular;
       }
 
+      h2 a {
+        visibility: hidden;
+        color: black;
+        padding: 0 0.25rem;
+      }
+
+      h2:hover a {
+        visibility: visible;
+      }
+
       .home {
         margin-right: 1rem;
         text-decoration: none;
@@ -257,7 +268,27 @@ const documentFromHtmlString = ({ content, title, fileMeta }) => {
 
 const withDoctype = (html, doctype) => `<!DOCTYPE ${doctype}> ${html}`
 
+const addLinkInTextElement = document => element => {
+  const { textContent } = element
+  const id = kebabCase(textContent)
+  element.setAttribute("id", id)
+  const link = document.createElement("a")
+  link.setAttribute("aria-hidden", "true")
+  const linkTextElement = document.createElement("strong")
+  linkTextElement.appendChild(document.createTextNode("#"))
+  link.href = `#${id}`
+  link.appendChild(linkTextElement)
+  element.appendChild(link)
+}
+
+const addHeaderLinks = document => {
+  const headerTwos = document.querySelectorAll("h2")
+  headerTwos.forEach(addLinkInTextElement(document))
+  return document
+}
+
 module.exports = {
   documentFromHtmlString,
   withDoctype,
+  addHeaderLinks,
 }

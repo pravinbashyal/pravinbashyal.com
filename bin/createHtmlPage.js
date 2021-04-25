@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 
-const { documentFromHtmlString, withDoctype } = require("./htmlOperations")
+const {
+  documentFromHtmlString,
+  withDoctype,
+  addHeaderLinks,
+} = require("./htmlOperations")
 const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
 const { createTimestampsManager } = require("./timestampsManager")
@@ -31,6 +35,7 @@ const fileCallBack = ({ createdAt, modifiedAt } = {}) => {
       const addTimestamps = createTimestampsManager({ createdAt, modifiedAt })
       addTimestamps(pageDocument)
     }
+    addHeaderLinks(pageDocument)
     writeFile(
       outputFilePath,
       withDoctype(pageDocument.documentElement.outerHTML, "html"),
