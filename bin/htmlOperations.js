@@ -108,7 +108,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       h1 {
         font-size: 2.25rem;
-        margin: 1rem 0 3rem 0rem;
+        margin: 1rem 0 2.5rem 0rem;
       }
 
       h2 {
@@ -157,7 +157,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       .timestamp {
         font-size: 0.8rem;
-        margin: -2.6rem 0 2.6rem 0;
+        margin: -2.25rem 0 2.25rem 0;
         color: rgba(50,50,50,0.9);
         padding-left: 0.25rem;
       }
