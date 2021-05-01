@@ -35,12 +35,12 @@ const formatDate = dateString => {
 }
 
 const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
-  const title = document.querySelector("h1")
+  const articleHeader = document.querySelector("article header")
 
   const timestampContainer = document.createElement("p")
   timestampContainer.classList.add("timestamp")
 
-  if (!title) return
+  if (!articleHeader) return
 
   const timestampNode = createDateNodeInDocument(document)
   const createdAtElement = timestampNode(formatDate(createdAt), "Published: ")
@@ -59,7 +59,7 @@ const createTimestampsManager = ({ createdAt, modifiedAt }) => document => {
     bracesClose.setAttribute("aria-hidden", "true")
     timestampContainer.appendChild(bracesClose)
   }
-  title.insertAdjacentElement("afterend", timestampContainer)
+  articleHeader.appendChild(timestampContainer)
   return document
 }
 

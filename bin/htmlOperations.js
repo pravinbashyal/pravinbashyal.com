@@ -11,18 +11,18 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       ${title}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/night-owl.min.css">
     <style>
       html {
-        font-size: 110%;
+        font-size: 115%;
         color: rgb(32, 33, 36);
         font-family: 'Roboto', sans-serif;
-        font-weight: light;
+        font-weight: 400;
       }
 
       body {
-        max-width: 90ch;
+        max-width: 80ch;
         margin: 0 auto;
         font-size: 1rem;
       }
@@ -32,7 +32,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         color: #1a73e8;
       }
 
-      header {
+      header.page-header {
         height: 6rem;
         display: flex;
         align-items: center;
@@ -50,10 +50,6 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         margin: 0 1rem;
       }
 
-      header *:last-child {
-        margin-right: 0;
-      }
-
       nav {
         padding: 1rem 0;
         display: flex;
@@ -64,13 +60,13 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         line-height: 1.5;
       }
 
-      header nav>a {
+      header.page-header nav>a {
         text-decoration: none;
         margin-right: 2rem;
         color: rgb(32, 33, 36);
       }
 
-      header nav>a:last-child {
+      header.page-header nav>a:last-child {
         margin-right: none;
       }
 
@@ -112,6 +108,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       h1 {
         font-size: 2.25rem;
+        margin: 1rem 0 3rem 0rem;
       }
 
       h2 {
@@ -129,7 +126,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       h1, h2, h3, h4, h5, h6 {
         line-height: 1.2;
         font-family: 'Source Sans Pro', sans-serif;
-        font-weight: regular;
+        font-weight: bold;
       }
 
       h2 a {
@@ -138,13 +135,13 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         padding: 0 0.25rem;
       }
 
+      h2:hover a {
+        visibility: visible;
+      }
+
       h2 a:hover {
         text-decoration: underline;
         text-decoration-thickness: from-font;
-      }
-
-      h2:hover a {
-        visibility: visible;
       }
 
       .home {
@@ -160,7 +157,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       .timestamp {
         font-size: 0.8rem;
-        margin: -1.2rem 0 1.5rem 0;
+        margin: -2.6rem 0 2.6rem 0;
         color: rgba(50,50,50,0.9);
         padding-left: 0.25rem;
       }
@@ -227,7 +224,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     </style>
   </head>
   <body>
-  <header>
+  <header class="page-header">
     <nav>
       <a href="/" class="home">
         <strong>
