@@ -11,25 +11,30 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       ${title}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/night-owl.min.css">
     <style>
       html {
         font-size: 115%;
         color: rgb(32, 33, 36);
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
+        font-family:  Mulish,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-weight: 300;
       }
 
       body {
-        max-width: 80ch;
+        max-width: 70ch;
         margin: 0 auto;
         font-size: 1rem;
+        line-height: 1.6;
       }
 
       article a {
         text-decoration: none;
         color: #1a73e8;
+      }
+
+      header {
+        font-family: 'Source Sans Pro', sans-serif;
       }
 
       header.page-header {
@@ -57,7 +62,8 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       }
 
       p {
-        line-height: 1.6;
+        max-width: 70ch;
+        margin: 1.6rem 0;
       }
 
       header.page-header nav>a {
@@ -114,10 +120,12 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       h2 {
         font-size: 1.875rem;
+        margin-top: 3rem;
       }
 
       h3 {
         font-size: 1.5rem;
+        margin-top: 2rem;
       }
 
       h4, h5, h6 {
@@ -132,7 +140,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       h2 a {
         visibility: hidden;
-        color: black;
+        color: rgb(32, 33, 36);
         padding: 0 0.25rem;
       }
 
@@ -148,7 +156,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .home {
         margin-right: 1rem;
         text-decoration: none;
-        color: black;
+        color: rgb(32, 33, 36);
       }
 
       .timestamp * {
@@ -159,13 +167,20 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .timestamp {
         font-size: 0.8rem;
         margin: -2.25rem 0 2.25rem 0;
-        color: rgba(50,50,50,0.9);
+        color: rgba(32, 33, 36, 0.9);
         padding-left: 0.25rem;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+      }
+
+      strong {
+        font-weight: bold;
       }
 
       code {
         font-family: 'Roboto Mono', monospace;
         border-radius: 6px;
+        font-weight: 400;
       }
 
       pre code {

@@ -5,8 +5,9 @@ module.exports = setTitle => ({
     if (level === 1) {
       console.log("title: ", { text })
       setTitle(text)
+      return `<header><h${level}>${text}</h${level}></header>`
     }
-    return `<header><h${level}>${text}</h${level}></header>`
+    return `<h${level}>${text}</h${level}>`
   },
   code(code, infostring, escaped) {
     const codeHtml = `<pre><code class="language-${infostring} hljs">${
