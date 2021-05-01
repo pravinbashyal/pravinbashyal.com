@@ -15,6 +15,7 @@ Bottom line, I wanted simple html website without too many javascript dependenci
 5. is responsive and accessible
 6. seo optimized
 7. lists latest blogs
+8. builds fast
 
 ## Libraries and tools
 - [marked](https://github.com/markedjs/marked)
@@ -80,8 +81,28 @@ Following would be output:
   </html>
 ```
 
+### _2. I write markdown and chugs out html blogs_
 
-### **_2. **
+This section will cover two of my requirements:
+- I write in md and chugs out html blogs
+
+```typescript
+const marked = require("marked")
+marked.use({ renderer: createRenderer(setTitle) })
+marked('### some title') // <h3>some title</h3>
+```
+### _3. It shows created date and last modified date_
+
+### _4. looks pretty decent_
+- typography
+- code highlighting
+- quotes
+
+### _5. is responsive and accessible_
+### _6. seo optimized_
+### _7. lists latest blogs_
+
+## What I gained
 
 This resulted in very little javascript dependencies.
 
@@ -103,20 +124,9 @@ My `package.json`:
 }
 ```
 
-### Write markdown; Chug out html
-This section will cover two of my requirements:
-- I write in md and chugs out html blogs
+**fast build**
+~ 30 seconds
 
-###
 
-```typescript
-const marked = require("marked")
-marked.use({ renderer: createRenderer(setTitle) })
-marked('### some title') // <h3>some title</h3>
-```
-### Lists latest blog
-
-### looks decent enough
-- typography
-- code highlighting
-- quotes
+### How does it scale?
+no idea. will see as we go. i dont plan to write blogs that often. maybe a blog per month or so. so it should be okay for 2-3 years. It was done as experiment anyways.
