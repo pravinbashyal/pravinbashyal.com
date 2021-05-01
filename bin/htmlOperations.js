@@ -197,12 +197,12 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
-        margin: 1.5rem 2rem;
+        font-size: 1.85rem;
+        margin: 2rem;
       }
 
       blockquote p {
-        font-weight: lighter;
+        color: rgba(32, 33, 36, 0.9);
       }
 
       blockquote>p::before {
@@ -221,7 +221,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       @media (max-width: 768px) {
         blockquote {
-          margin: 1.5rem 0.5rem;
+          margin: 2rem 0.5rem;
         }
       }
 
