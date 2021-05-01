@@ -50,7 +50,6 @@ const commandCallback = timestampType => (error, stdout) => {
   const outputLines = stdout.split(os.EOL)
   if (outputLines.filter(notEmptyString).length === 0) return
   const date = outputLines[2]
-  console.log({ outputLines })
   const dateSplit = date.split(" ")
   const index = dateSplit.slice(1).findIndex(notEmptyString)
   changes[timestampType] = dateSplit
@@ -61,7 +60,6 @@ const commandCallback = timestampType => (error, stdout) => {
 
 const getTimestamps = (filename, cb) => {
   const runCommand = ({ command, timestampType }) => {
-    console.log("command ran", command)
     return exec(command, commandCallback(timestampType))
   }
 
@@ -82,11 +80,21 @@ const getTimestamps = (filename, cb) => {
 }
 
 const blogRegex = new RegExp(".*blogs/[a-zA-Z_.-]+.md$")
+const last = array => array[array.length - 1]
+const isIndex = path => last(path.split("/")) === "index.md"
 const isBlogPath = path => {
-  return blogRegex.test(path)
+  return blogRegex.test(path) && !isIndex(path)
 }
 
-module.exports = { getTimestamps, isBlogPath }
+const toGithubEditPath = inputPath => {
+  const filePath = inputPath
+    .split("/")
+    .filter(pathSplit => pathSplit !== ".")
+    .join("/")
+  return `https://github.com/pravinbashyal/pravinbashyal.com/edit/master/src/${filePath}`
+}
+
+module.exports = { getTimestamps, isBlogPath, toGithubEditPath }
 
 // listFiles.on("close", _ => {
 //   console.log("exited", { files })

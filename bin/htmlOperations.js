@@ -267,14 +267,14 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       </a>
     </nav>
     <section class="social" aria-label="social">
-      <a href="https://twitter.com/pravinbashyal" title="twitter" rel="me noopener">
+      <a href="https://twitter.com/pravinbashyal" title="twitter" target="_blank" rel="me noopener noreferrer">
         <span class="icon-button-label">
           Twitter
         </span>
         <img style="margin-bottom: -1px;" src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/twitter.svg" alt="twitter icon">
         </img>
       </a>
-      <a href="https://github.com/pravinbashyal" title="github" rel="me noopener">
+      <a href="https://github.com/pravinbashyal" title="github" target="_blank" rel="me noopener noreferrer">
         <span class="icon-button-label">
           Github
         </span>
@@ -289,9 +289,6 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     </article>
   </main>
   <footer>
-    <a href="https://github.com/pravinbashyal/pravinbashyal.com/edit/master/src/blogs/how_i_built_pure_html_blog.md">
-      Suggest Edit
-    </a>
   </footer>
   </body>
   </html>

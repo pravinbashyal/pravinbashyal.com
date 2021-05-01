@@ -8,7 +8,8 @@ const {
 const createRenderer = require("./renderer")
 const { getTitle, setTitle } = require("./title")
 const { createTimestampsManager } = require("./timestampsManager")
-const { getTimestamps, isBlogPath } = require("./files")
+const { getTimestamps, isBlogPath, toGithubEditPath } = require("./files")
+const { addEditLinkToFooter } = require("./editLink")
 const parseName = require("./parseName")
 
 const [inputFilePath, outputPath] = process.argv.slice(2)
@@ -28,12 +29,15 @@ const createHtmlDocument = mdString => {
   return document
 }
 
-const fileCallBack = ({ createdAt, modifiedAt } = {}) => {
+const fileCallBack = ({ createdAt, modifiedAt, githubEditPath } = {}) => {
   readFile(inputFilePath, "utf-8", (_, mdString) => {
     const pageDocument = createHtmlDocument(mdString)
     if (createdAt && modifiedAt) {
       const addTimestamps = createTimestampsManager({ createdAt, modifiedAt })
       addTimestamps(pageDocument)
+    }
+    if (githubEditPath) {
+      addEditLinkToFooter(pageDocument, githubEditPath)
     }
     addHeaderLinks(pageDocument)
     writeFile(
@@ -46,7 +50,9 @@ const fileCallBack = ({ createdAt, modifiedAt } = {}) => {
 }
 
 if (isBlogPath(inputFilePath)) {
-  getTimestamps(inputFilePath, fileCallBack)
+  getTimestamps(inputFilePath, dates =>
+    fileCallBack({ ...dates, githubEditPath: toGithubEditPath(inputFilePath) })
+  )
 } else {
   fileCallBack()
 }
