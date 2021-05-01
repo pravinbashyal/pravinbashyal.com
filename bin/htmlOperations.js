@@ -11,12 +11,18 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       ${title}
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300;0,400;1,400&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/night-owl.min.css">
     <style>
+      :root {
+        --primary-text-color: rgb(32, 33, 36);
+        --secondary-text-color: rgba(32, 33, 36, 0.9);
+        --code-font-size: 0.8rem;
+      }
+
       html {
         font-size: 115%;
-        color: rgb(32, 33, 36);
+        color: var(--primary-text-color);
         font-family:  Mulish,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
         font-weight: 300;
       }
@@ -46,6 +52,10 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         font-size: 1rem;
       }
 
+      .page-header strong {
+        color: black;
+      }
+
       footer {
         height: 6rem;
         position: absolute;
@@ -69,7 +79,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       header.page-header nav>a {
         text-decoration: none;
         margin-right: 1.25rem;
-        color: rgb(32, 33, 36);
+        color: var(--primary-text-color);
         line-height: 1;
       }
 
@@ -140,7 +150,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       h2 a {
         visibility: hidden;
-        color: rgb(32, 33, 36);
+        color: var(--primary-text-color);
         padding: 0 0.25rem;
       }
 
@@ -156,7 +166,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .home {
         margin-right: 1rem;
         text-decoration: none;
-        color: rgb(32, 33, 36);
+        color: var(--primary-text-color);
       }
 
       .timestamp * {
@@ -167,7 +177,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       .timestamp {
         font-size: 0.8rem;
         margin: -2.25rem 0 2.25rem 0;
-        color: rgba(32, 33, 36, 0.9);
+        color: var(--secondary-text-color);
         padding-left: 0.25rem;
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 400;
@@ -179,18 +189,23 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
 
       code {
         font-family: 'Roboto Mono', monospace;
-        border-radius: 6px;
-        font-weight: 400;
+        font-size: var(--code-font-size);
+        background: rgba(32, 33, 36, 0.09);
+        border-radius: 5px;
+        padding: 0.25rem;
       }
 
       pre code {
         -webkit-box-shadow: 0px 0px 6px 0px rgba(2,35,19,0.24);
         box-shadow: 0px 0px 6px 0px rgba(2,35,19,0.24);
+        border-radius: 6px;
+        padding: 1.25rem !important;
       }
 
       code * {
         font-family: inherit;
-        font-size: 1rem;
+        font-size: var(--code-font-size);
+        font-weight: 400;
       }
 
       blockquote {
@@ -202,7 +217,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
       }
 
       blockquote p {
-        color: rgba(32, 33, 36, 0.9);
+        color: var(--secondary-text-color);
       }
 
       blockquote>p::before {
@@ -274,6 +289,9 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
     </article>
   </main>
   <footer>
+    <a href="https://github.com/pravinbashyal/pravinbashyal.com/edit/master/src/blogs/how_i_built_pure_html_blog.md">
+      Suggest Edit
+    </a>
   </footer>
   </body>
   </html>
