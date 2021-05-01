@@ -14,7 +14,6 @@ const parseName = require("./parseName")
 
 const [inputFilePath, outputPath] = process.argv.slice(2)
 const outputFilePath = `${outputPath}/${parseName(inputFilePath)}.html`
-console.log({ inputFilePath, outputFilePath })
 
 const marked = require("marked")
 marked.use({ renderer: createRenderer(setTitle) })
