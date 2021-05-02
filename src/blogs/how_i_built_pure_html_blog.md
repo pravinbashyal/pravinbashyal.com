@@ -127,6 +127,22 @@ My `package.json`:
 **fast build**
 ~ 30 seconds
 
+## Other workarounds
+
+### Use imgur for images
+
+Currently images are hosted in imgur. I guess this can also be optimized to use [WebP](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp_image) version instead of jpeg version. Also [Picture html element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) is highly recommended to be used in the website. However for now I have opted to host some optimized image and imgur and link them as follows
+
+```markdown
+![alt text](https://link-to-image)
+```
+
 
 ### How does it scale?
 no idea. will see as we go. i dont plan to write blogs that often. maybe a blog per month or so. so it should be okay for 2-3 years. It was done as experiment anyways.
+
+### Lighthouse score
+
+This website has excellent lighthouse score as shown in the screenshot below for this particular page.
+
+![screenshot for lighthouse score for link:https://www.pravinbashyal.com/blogs/how_i_built_pure_html_blog.html](https://i.imgur.com/EzxdlN8.png)

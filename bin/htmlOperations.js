@@ -7,7 +7,7 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="description" content="Author: Pravin Bashyal(pravin.bashyal@gmail.com), ${title}">
+    <meta name="description" content="${title}">
     <title>
       ${title}
     </title>
