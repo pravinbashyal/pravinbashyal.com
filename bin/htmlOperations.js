@@ -253,8 +253,9 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         border-width: 0;
       }
 
-      img {
-        max-width: inherit;
+      article img {
+        width: 100%;
+        height: 100%;
       }
 
     </style>
