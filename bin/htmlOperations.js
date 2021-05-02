@@ -253,6 +253,10 @@ const createHtmlFrame = ({ content, title, fileMeta }) =>
         border-width: 0;
       }
 
+      img {
+        max-width: inherit;
+      }
+
     </style>
   </head>
   <body>
