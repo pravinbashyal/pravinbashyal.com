@@ -6,3 +6,4 @@
 - wanted to add timestamp below header
 - keeps pulling up
 - figured that's what's happening
+- elements only respects adjascent element's margins
