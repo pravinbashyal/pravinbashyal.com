@@ -145,10 +145,10 @@ no idea. will see as we go. i dont plan to write blogs that often. maybe a blog 
 
 This website has excellent lighthouse score as shown in the screenshot below for this particular page.
 
-![screenshot for lighthouse score for link:https://www.pravinbashyal.com/blogs/how_i_built_pure_html_blog.html](https://i.imgur.com/EzxdlN8.png)
+![screenshot for lighthouse score for link:https://www.pravinbashyal.com/blogs/how_i_built_pure_html_blog.html](https://i.imgur.com/7oqQOb7.jpg)
 
 ### Build time
 
 Currently the build time is pretty fast. Most of the builds run under 30s. However as there are only couple of files to transform, this might increase with the number of blogs. I will have to keep an eye on how this scales over time.
 
-![screenshot for build time](https://lh3.googleusercontent.com/fife/ABSRlIrIvM2WSBc-EfmSWPnUpqZu325QO1I_axzWs6c9ql24c-4Wd4LBymzZYD47nXLEPK0x48mFRhNbxeSZND_cIf7sXOavq9_4WFdTXT_JLteQyVqDE4tVXGDrSsbZ-A9AJom0dEeyQz_-X4JMbgjXhBrqYU7KI1mTgGgyMXrgtDzGOIrbDi9dJHYzxX001ABAqDUHyvLR5DQ77rf0r8Dvbr-_FozeOGE6hzxo-yPa5oV5BR4oh1C_PrulPEcX3bchr03QW1AYecDjQuBW7nL_pKYCsZVZRM89yCeZpD0cX6TKYhtsc_KrlP-6uXxAYwLQXOeHwIX6AZ7pp7iXv8o1GkT0E9pjWBQ6NU7iIibbMTwUG5rXhe2K6ZswpF4I3shZzwuuKNdJfDF_FeN3gtmC8q_ntC9BDDGLvGF-81DBQONW6mR5Z_GCMfZ4fOB3Ks-Xydy5zw0o7Ue0MY0qrJs8KXRg8YZckTfqoqQP7oIfK-Mk35uOiY3PcJ7M8zds8eJiVZ8vq7wIcmiqom7dsPwbJ6CCsSvFZkt96eOE1CVmg5iqTxhnfIBWFqw2PKfMAbCTnc1prdSszZWXJxIq37TuwBeJGrFTMi9fN2zWhHoeWYORVaQiD78rAEsVJom58VhZLANeS0ug0NWkamswBcIT795BaAE-drGTPmLf2OTQhrVLtE4GTOWYl1QetYzkKczOW3OcjcT6AxSZDQsDjiLUXS4Bk-u-BUmZZTY=w2880-h758-ft)
+![screenshot for build time](https://i.imgur.com/UliHRhN.jpg)
