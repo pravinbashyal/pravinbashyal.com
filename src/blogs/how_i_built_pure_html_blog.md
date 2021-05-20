@@ -152,3 +152,7 @@ This website has excellent lighthouse score as shown in the screenshot below for
 Currently the build time is pretty fast. Most of the builds run under 30s. However as there are only couple of files to transform, this might increase with the number of blogs. I will have to keep an eye on how this scales over time.
 
 ![screenshot for build time](https://i.imgur.com/UliHRhN.jpg)
+
+<script>
+  console.log('hello')
+</script>
