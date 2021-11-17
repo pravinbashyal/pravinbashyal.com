@@ -1,13 +1,16 @@
 const { parseHTML } = require("linkedom")
 const kebabCase = require("lodash.kebabcase")
 
-const createHtmlFrame = ({ content, title, fileMeta }) =>
+const createHtmlFrame = ({ content, title, fileMeta, url }) =>
   `
   <html lang="en-US">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="description" content="${title}">
+    <meta property="og:title" content="${title}" />
+    <meta property="og:url" content="https://pravinbashyal.com" />
+    <meta name="og:description" content="${content}">
     <title>
       ${title}
     </title>
@@ -307,7 +310,7 @@ const documentFromHtmlString = ({ content, title, fileMeta }) => {
 
 const withDoctype = (html, doctype) => `<!DOCTYPE ${doctype}> ${html}`
 
-const addLinkInTextElement = document => element => {
+const addLinkInTextElement = (document) => (element) => {
   const { textContent } = element
   const id = kebabCase(textContent)
   element.setAttribute("id", id)
@@ -318,7 +321,7 @@ const addLinkInTextElement = document => element => {
   element.appendChild(link)
 }
 
-const addHeaderLinks = document => {
+const addHeaderLinks = (document) => {
   const headerTwos = document.querySelectorAll("h2")
   headerTwos.forEach(addLinkInTextElement(document))
   return document
