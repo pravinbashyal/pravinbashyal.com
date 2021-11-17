@@ -1,7 +1,7 @@
 const { parseHTML } = require("linkedom")
 const kebabCase = require("lodash.kebabcase")
 
-const createHtmlFrame = ({ content, title, fileMeta, url }) =>
+const createHtmlFrame = ({ content, title, fileMeta }) =>
   `
   <html lang="en-US">
   <head>
@@ -10,7 +10,6 @@ const createHtmlFrame = ({ content, title, fileMeta, url }) =>
     <meta name="description" content="${title}">
     <meta property="og:title" content="${title}" />
     <meta property="og:url" content="https://pravinbashyal.com" />
-    <meta name="og:description" content="${content}">
     <title>
       ${title}
     </title>
