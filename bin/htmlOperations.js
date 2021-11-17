@@ -11,9 +11,9 @@ const createHtmlFrame = ({ content, title, fileMeta, description = "" }) =>
     <meta property="og:title" content="${title}" />
     <meta property="og:url" content="https://pravinbashyal.com" />
     <meta property="og:description" content="${description}" />
-    <meta property="twitter:title" content="${title}" />
-    <meta property="twitter:url" content="https://pravinbashyal.com" />
-    <meta property="twitter:description" content="${description}" />
+    <meta name="twitter:card" content="${description}" />
+    <meta name="twitter:site" content="https://pravinbashyal.com" />
+    <meta name="twitter:creator" content="@pravinbashyal" />
     <title>
       ${title}
     </title>
