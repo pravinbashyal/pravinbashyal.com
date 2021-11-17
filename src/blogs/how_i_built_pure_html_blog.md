@@ -1,13 +1,18 @@
+<!-- description-start
+
+I had been working on developing some personal website with Gatsby, mid way through I said to myself, 'Your are not gonna need static website framework... probably'. Dont get me wrong, tools and frameworks like Gatsbyjs, Nextjs or remix_run are great tools and if you want more done in your personal blog like analytics, payment gateway, search, rss feed, these services are probably your best fit. They provide array of plugins and themes that's easily pluggable which I did not need.  Also I am not a html purist carrying flame and pitchfork against javascript and frontend frameworks. We have come to an era of web apps where we have access to complex software solutions inside browser regardless of OS or device. And this can be mostly attributed to the progress in javascript and frontend eco system. I just had some free time in hand and wanted my website to be simple and fast
+description-end -->
+
 # (WIP) How I build pure html blog?
 
-I had been working on developing some personal website with Gatsby, mid way through I said to myself, 'Your requirements are really simple. You dont need static website framework... probably'. Dont get me wrong, site generators like Gatsbyjs, Nextjs or remix_run are great tools and if you want more done in your personal blog like analytics, payment gateway, search, rss feed, these services are probably your best fit. They provide array of plugins and themes that's easily pluggable which I did not need.  Also I am not a html purist carrying flame and pitchfork agains against javascript and frontend framework like react. We have come to an era of web apps where we have access to complex software solutions inside browser regardless of OS or device. And this can be mostly attributed to the progress in javascript and frontend eco system.
+I had been working on developing some personal website with Gatsby, mid way through I said to myself, 'Your are not gonna need static website framework... probably'. Dont get me wrong, tools and frameworks like Gatsbyjs, Nextjs or remix_run are great tools and if you want more done in your personal blog like analytics, payment gateway, search, rss feed, these services are probably your best fit. They provide array of plugins and themes that's easily pluggable which I did not need. Also I am not a html purist carrying flame and pitchfork against javascript and frontend frameworks. We have come to an era of web apps where we have access to complex software solutions inside browser regardless of OS or device. And this can be mostly attributed to the progress in javascript and frontend eco system. I just had some free time in hand and wanted my website to be simple and fast.
 
-> You dont need  static website framework<br/>
->  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...probably
+> You dont need static website framework<br/> > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...probably
 
 Bottom line, I wanted simple html website without too many javascript dependencies and configs. So I scraped what I had in progress with gatsby and started listing out what my requirements were.
 
 ## Requirements
+
 1. basic html and css blog
 2. I write markdown and chugs out html blogs
 3. It shows created date and last modified date
@@ -18,6 +23,7 @@ Bottom line, I wanted simple html website without too many javascript dependenci
 8. builds fast
 
 ## Libraries and tools
+
 - [marked](https://github.com/markedjs/marked)
 - [linkedom](https://github.com/WebReflection/linkedom)
 - [highlight.js](https://highlightjs.org/)
@@ -26,6 +32,7 @@ Bottom line, I wanted simple html website without too many javascript dependenci
 Through different improvements and iterations what I have right now can be found in my [github repo](https://github.com/pravinbashyal/pravinbashyal.com). Please do raise an issue or leave a feedback.
 
 ## Processes
+
 Now lets break down how these requirements were met.
 
 ### _1. basic html and css blog_
@@ -60,46 +67,47 @@ world
 ```
 
 Following would be output:
+
 ```html
-  <html>
-    <head></head>
-    <body>
+<html>
+  <head></head>
+  <body>
     <header></header>
     <main>
       <article>
-        <h1>
-          Hello
-        </h1>
-        <p>
-          world
-        </p>
+        <h1>Hello</h1>
+        <p>world</p>
       </article>
     </main>
-    <footer>
-    </footer>
-    </body>
-  </html>
+    <footer></footer>
+  </body>
+</html>
 ```
 
 ### _2. I write markdown and chugs out html blogs_
 
 This section will cover two of my requirements:
+
 - I write in md and chugs out html blogs
 
 ```typescript
 const marked = require("marked")
 marked.use({ renderer: createRenderer(setTitle) })
-marked('### some title') // <h3>some title</h3>
+marked("### some title") // <h3>some title</h3>
 ```
+
 ### _3. It shows created date and last modified date_
 
 ### _4. looks pretty decent_
+
 - typography
 - code highlighting
 - quotes
 
 ### _5. is responsive and accessible_
+
 ### _6. seo optimized_
+
 ### _7. lists latest blogs_
 
 ## What I gained
@@ -137,8 +145,8 @@ Currently images are hosted in imgur. I guess this can also be optimized to use 
 ![alt text](https://link-to-image)
 ```
 
-
 ### How does it scale?
+
 no idea. will see as we go. i dont plan to write blogs that often. maybe a blog per month or so. so it should be okay for 2-3 years. It was done as experiment anyways.
 
 ### Lighthouse score
