@@ -4,18 +4,14 @@
 
 I am a passionate frontend developer with expertise in ReactJS, TypeScript, and JavaScript. I advocate for writing accessible, well-tested, and well-documented components. I have a proven track record of contributing to the growth and success of early-stage startups and enterprise-level products through my focus on scalability and reliability. I am a collaborative team player and always seek to improve workflows and processes.
 
-### Skills
+### Skills and experience
 
-- ReactJS: Expert
-- TypeScript: Expert
-- JavaScript: Expert
-- HTML: Expert
-- CSS: Intermediate
-- JSS: Expert
-- Integration Testing: Expert
-- E2E Testing: Intermediate
-- Node.js: Intermediate
-- Koa: Intermediate
+- ReactJS: (7+ yrs)
+- TypeScript: (5+ yrs)
+- JavaScript: Expert(8+ yrs)
+- HTML: Expert(7+ yrs)
+- CSS: Intermediate(7+ yrs)
+- Node.js: (5+ yrs)
 
 ### Work Experience
 
